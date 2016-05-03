@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "VVStack.h"
+#import "Kiwi.h"
 
 @interface VVStackTests : XCTestCase
 
@@ -57,12 +58,12 @@
 }
 
 - (void)testPopANumberAndGetIt {
-    [self.stack push:3.1];
-    NSInteger beforePopCount = self.stack.count;
-    double popNumber = [self.stack pop];
-    NSInteger afterPopCount = self.stack.count;
-    XCTAssertEqual(popNumber, 3.1, @"VVStack should can be pop and return the pop value.");
-    XCTAssertEqual(beforePopCount, afterPopCount + 1, @"VVStack pop and count should minus 1");
+//    [self.stack push:3.1];
+//    NSInteger beforePopCount = self.stack.count;
+//    double popNumber = [self.stack pop];
+//    NSInteger afterPopCount = self.stack.count;
+//    XCTAssertEqual(popNumber, 3.1, @"VVStack should can be pop and return the pop value.");
+//    XCTAssertEqual(beforePopCount, afterPopCount + 1, @"VVStack pop and count should minus 1");
 }
 
 @end

@@ -10,33 +10,35 @@
 
 @interface VVStack()
 @property (nonatomic, strong) NSMutableArray *numbers;
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation VVStack
 - (id)init {
     if (self = [super init]) {
         _numbers = [NSMutableArray new];
-        _count = 0;
     }
     return self;
 }
 
 - (void)push:(double)num {
     [self.numbers addObject:@(num)];
-    self.count++;
 }
 
 - (double)pop {
-    NSAssert(self.count > 0, @"count should > 0");
-    NSNumber *lastNum = self.numbers.lastObject;
+    if ([self count] == 0) {
+        [NSException raise:@"VVStackPopEmptyException" format:@"Can not pop an empty stack."];
+    }
+    double result = self.top;
     [self.numbers removeLastObject];
-    self.count--;
-    return [lastNum floatValue];
+    return result;
 }
 
 - (double)top {
     return [[self.numbers lastObject] doubleValue];
+}
+
+- (NSInteger)count {
+    return [self.numbers count];
 }
 @end
 
