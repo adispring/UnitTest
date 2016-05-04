@@ -9,6 +9,7 @@ end
 
 target 'VVStackTests', :exclusive => true do
   pod 'Kiwi'
+  pod 'OCMock'
 end
 
 target 'VVStackUITests' do

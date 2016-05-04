@@ -1,10 +1,13 @@
 PODS:
   - Kiwi (2.4.0)
+  - OCMock (3.3)
 
 DEPENDENCIES:
   - Kiwi
+  - OCMock
 
 SPEC CHECKSUMS:
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  OCMock: d68685bde31f69cb61d518dcb39269080c78b5ed
 
 COCOAPODS: 0.39.0

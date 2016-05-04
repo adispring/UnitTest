@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OCMock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-VVStackTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4A2CAA839F2722C796C6F1DFDC806B92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4CB3F7F46945EE16A19F86EAB6FC5CAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B261A772E273BBDBCD596660C5D1210F</key>
+		<key>C753BC9C2E9B1D4EE649E02D4F6582AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9DB8C001CD88DD200A06156 /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB8BFF1CD88DD200A06156 /* SimpleStringSpec.m */; };
 		C9DB8C021CD8946900A06156 /* VVStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB8C011CD8946900A06156 /* VVStackSpec.m */; };
+		C9DB8C051CD9DC6800A06156 /* VVPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB8C041CD9DC6800A06156 /* VVPlace.m */; };
+		C9DB8C071CD9DD4000A06156 /* VVStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB8C061CD9DD4000A06156 /* VVStackTests.m */; };
 		C9F53D591CD34B820045BBF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F53D581CD34B820045BBF7 /* main.m */; };
 		C9F53D5C1CD34B820045BBF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F53D5B1CD34B820045BBF7 /* AppDelegate.m */; };
 		C9F53D5F1CD34B820045BBF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F53D5E1CD34B820045BBF7 /* ViewController.m */; };
@@ -42,6 +44,9 @@
 		7A88A0BDE75763A0C777D31F /* Pods-VVStackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VVStackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VVStackTests/Pods-VVStackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9DB8BFF1CD88DD200A06156 /* SimpleStringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleStringSpec.m; path = ../VVStack/SimpleStringSpec.m; sourceTree = "<group>"; };
 		C9DB8C011CD8946900A06156 /* VVStackSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStackSpec.m; sourceTree = "<group>"; };
+		C9DB8C031CD9DC6800A06156 /* VVPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVPlace.h; sourceTree = "<group>"; };
+		C9DB8C041CD9DC6800A06156 /* VVPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVPlace.m; sourceTree = "<group>"; };
+		C9DB8C061CD9DD4000A06156 /* VVStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStackTests.m; sourceTree = "<group>"; };
 		C9F53D541CD34B820045BBF7 /* VVStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VVStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F53D581CD34B820045BBF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9F53D5A1CD34B820045BBF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +132,8 @@
 				C9F53D5E1CD34B820045BBF7 /* ViewController.m */,
 				C9F53D8A1CD34ED60045BBF7 /* VVStack.h */,
 				C9F53D8B1CD34ED60045BBF7 /* VVStack.m */,
+				C9DB8C031CD9DC6800A06156 /* VVPlace.h */,
+				C9DB8C041CD9DC6800A06156 /* VVPlace.m */,
 				C9F53D571CD34B820045BBF7 /* Supporting Files */,
 			);
 			path = VVStack;
@@ -148,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F53D731CD34B820045BBF7 /* Info.plist */,
+				C9DB8C061CD9DD4000A06156 /* VVStackTests.m */,
 				C9DB8BFF1CD88DD200A06156 /* SimpleStringSpec.m */,
 				C9DB8C011CD8946900A06156 /* VVStackSpec.m */,
 			);
@@ -355,6 +363,7 @@
 			files = (
 				C9F53D5F1CD34B820045BBF7 /* ViewController.m in Sources */,
 				C9F53D5C1CD34B820045BBF7 /* AppDelegate.m in Sources */,
+				C9DB8C051CD9DC6800A06156 /* VVPlace.m in Sources */,
 				C9F53D8C1CD34ED60045BBF7 /* VVStack.m in Sources */,
 				C9F53D591CD34B820045BBF7 /* main.m in Sources */,
 			);
@@ -366,6 +375,7 @@
 			files = (
 				C9DB8C001CD88DD200A06156 /* SimpleStringSpec.m in Sources */,
 				C9DB8C021CD8946900A06156 /* VVStackSpec.m in Sources */,
+				C9DB8C071CD9DD4000A06156 /* VVStackTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

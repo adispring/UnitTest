@@ -7,8 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "VVStack.h"
 #import "Kiwi.h"
+#import "OCMock.h"
+
+#import "VVStack.h"
+#import "VVPlace.h"
+
+//#define OCMOCK_V2
 
 @interface VVStackTests : XCTestCase
 
@@ -58,12 +63,47 @@
 }
 
 - (void)testPopANumberAndGetIt {
-//    [self.stack push:3.1];
-//    NSInteger beforePopCount = self.stack.count;
-//    double popNumber = [self.stack pop];
-//    NSInteger afterPopCount = self.stack.count;
-//    XCTAssertEqual(popNumber, 3.1, @"VVStack should can be pop and return the pop value.");
-//    XCTAssertEqual(beforePopCount, afterPopCount + 1, @"VVStack pop and count should minus 1");
+
+}
+
+- (void)testGetPlaceDetails {
+    VVPlace *actualPlaceInstance = [[VVPlace alloc] init];
+    id partialMockPlace = OCMPartialMock(actualPlaceInstance);
+    
+    // 替换 getPlaceName 的返回值
+    OCMStub([partialMockPlace getPlaceName]).andReturn(@"JFK International Airport");
+    XCTAssertEqualObjects([partialMockPlace getPlaceName], @"JFK International Airport", @"Invalid Place name");
+    
+    // 验证 getEncodeName 调用后，encodeName 有没有被调用。
+    [partialMockPlace getEncodeName];
+    OCMVerify([partialMockPlace encodeName]);
+//    OCMVerify([partialMockPlace getOtherName]);
+ 
+    // 模拟completeBlock 的返回数据。
+#ifdef OCMOCK_V2
+    void (^proxyBlock)(NSInvocation *) = ^(NSInvocation *invocation) {
+        void (^passedBlock)(NSString *result);
+        // The block gets a NSInvocation instance from which you can query all the used arguments. Note that the first argument is at index 2 since you have self and _cmd at the indices 0 and 1
+        [invocation getArgument: &passedBlock atIndex: 2];
+        if (passedBlock != nil) {
+            passedBlock(@"JFK International Airport");
+        }
+    };
+    
+    [[[partialMockPlace stub] andDo:proxyBlock] getPlaceDetails:[OCMArg any]];
+#else
+    OCMStub([partialMockPlace getPlaceDetails:[OCMArg any]]).andDo(^(NSInvocation *invocation) {
+        void (^passedBlock)(NSString *result);
+        [invocation getArgument: &passedBlock atIndex: 2];
+        if (passedBlock != nil) {
+            passedBlock(@"JFK International Airport");
+        }
+    });
+#endif
+    
+    [partialMockPlace getPlaceDetails:^(NSString *result) {
+        XCTAssertEqualObjects(result, @"JFK International Airport");
+    }];
 }
 
 @end
